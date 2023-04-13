@@ -1,0 +1,3 @@
+Resource
+StandardMaterial3D
+HeightMapShape3D

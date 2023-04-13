@@ -1,3 +1,26 @@
-res://default_env.tres
-res://World.tscn
-res://Debug/Tilemap/tileset.tres
+res://world/node_3d.tscn
+res://world/generator/Block.tscn
+res://world/generator/Labyrinth Generator.tscn
+res://world/player/Player.tscn
+res://world/generator/mål/Boll.tscn
+res://world/player/peng.tscn
+res://world/generator/start/Start.tscn
+res://menus/game_menu.tscn
+res://menus/start menu/start_menu.tscn
+res://menus/start menu/Type/Custom/Custom.tscn
+res://menus/start menu/Type/Type.tscn
+res://data_transfer.gd
+res://menus/start menu/Type/Custom/Custom.gd
+res://menus/start menu/Type/Type.gd
+res://world/generator/plasera_block.gd
+res://Maze-Generator/Labyrinth Generator.gd
+res://menus/game_menu.gd
+res://menus/start menu/Type/Normal/normal.gd
+res://menus/start menu/Type/Normal/normal.tscn
+res://menus/start menu/start_menu.gd
+res://world/pause.gd
+res://world/player/Player.gd
+res://world/generator/start/start.gd
+res://world/generator/mål/Area3D.gd
+res://Score saver/Score.tres
+res://Score saver/score_saver.gd

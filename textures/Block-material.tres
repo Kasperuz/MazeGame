@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://w3p63qi5yo3f"]
+
+[ext_resource type="Texture2D" uid="uid://3jr1t2cnlt3" path="res://textures/Asphalt026C_4K-JPG/Asphalt026C_4K_Color.jpg" id="1_m34o3"]
+[ext_resource type="Texture2D" uid="uid://cinwbd0l75ap0" path="res://textures/Asphalt026C_4K-JPG/Asphalt026C_4K_AmbientOcclusion.jpg" id="2_tuaoo"]
+[ext_resource type="Texture2D" uid="uid://b4kdl2sgv7pcp" path="res://textures/Asphalt026C_4K-JPG/Asphalt026C_4K_NormalGL.jpg" id="3_f74v2"]
+[ext_resource type="Texture2D" uid="uid://8uehak4a5fnw" path="res://textures/Asphalt026C_4K-JPG/Asphalt026C_4K_Roughness.jpg" id="4_6mapg"]
+
+[resource]
+albedo_texture = ExtResource("1_m34o3")
+roughness_texture = ExtResource("4_6mapg")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("3_f74v2")
+ao_enabled = true
+ao_texture = ExtResource("2_tuaoo")
+ao_texture_channel = 4

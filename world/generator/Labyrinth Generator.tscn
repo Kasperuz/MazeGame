@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7h2uf2mxl6k6"]
+
+[ext_resource type="Script" path="res://Maze-Generator/Labyrinth Generator.gd" id="1_wug2l"]
+
+[node name="Labyrinth Generator" type="Node"]
+script = ExtResource("1_wug2l")

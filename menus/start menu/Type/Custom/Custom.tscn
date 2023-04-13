@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt5wob4ffq07g"]
+
+[ext_resource type="Script" path="res://menus/start menu/Type/Custom/Custom.gd" id="1_r24ea"]
+
+[node name="custom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r24ea")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.398437
+anchor_top = 0.640432
+anchor_right = 0.609374
+anchor_bottom = 0.83179
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 67
+text = "Start"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Size" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 341.0
+offset_right = 832.0
+offset_bottom = 357.0
+
+[node name="Label" type="Label" parent="Size"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.107212
+anchor_top = -0.3125
+anchor_right = -0.0292398
+anchor_bottom = 1.625
+theme_override_font_sizes/font_size = 20
+text = "Size"
+metadata/_edit_use_anchors_ = true
+
+[node name="Turn chance" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 216.0
+offset_right = 833.0
+offset_bottom = 232.0
+max_value = 1.0
+step = 0.01
+
+[node name="Label" type="Label" parent="Turn chance"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.265107
+anchor_top = -0.5
+anchor_right = -0.0272904
+anchor_bottom = 1.4375
+theme_override_font_sizes/font_size = 20
+text = "Turn Chance"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.00154321
+anchor_right = 0.210937
+anchor_bottom = 0.192901
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 42
+text = "Back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

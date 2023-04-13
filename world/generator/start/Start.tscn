@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://gw8a5mef178c"]
+
+[ext_resource type="Script" path="res://world/generator/start/start.gd" id="1_0q0dy"]
+[ext_resource type="Texture2D" uid="uid://shsh5j0yt7lw" path="res://textures/Tiles074_8K-JPG/Tiles074_8K_Color.jpg" id="2_q7chn"]
+[ext_resource type="Texture2D" uid="uid://cwyqfwbhfv60j" path="res://textures/Tiles074_8K-JPG/Tiles074_8K_NormalGL.jpg" id="3_w6111"]
+[ext_resource type="Texture2D" uid="uid://s7bqsvkvjpgl" path="res://textures/Tiles074_8K-JPG/Tiles074_8K_Roughness.jpg" id="4_nori4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwjbj"]
+size = Vector3(1, 7, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3xm5"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.501961)
+albedo_texture = ExtResource("2_q7chn")
+roughness_texture = ExtResource("4_nori4")
+roughness_texture_channel = 4
+emission_enabled = true
+emission = Color(0.137255, 0.137255, 0.137255, 1)
+normal_enabled = true
+normal_texture = ExtResource("3_w6111")
+uv1_triplanar = true
+uv2_triplanar = true
+
+[node name="Start" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_0q0dy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+shape = SubResource("BoxShape3D_iwjbj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+size = Vector3(1, 7, 0.5)
+material = SubResource("StandardMaterial3D_v3xm5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+shape = SubResource("BoxShape3D_iwjbj")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

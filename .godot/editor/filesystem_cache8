@@ -1,12 +1,72 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679147865
-default_env.tres::Environment::2176442672185958709::1678992197::0::1::::<><>::
-icon.png::CompressedTexture2D::3860198610168468082::1676657455::1677862507::1::::<><>::
-Labyrinth Generator.gd::GDScript::-1::1678991794::0::1::::<>Node<>::
-Labyrinth Generator.tscn::PackedScene::7567385450505099437::1678991465::0::1::::<><>::
-World.tscn::PackedScene::3506091506655253715::1678992197::0::1::::<><>::uid://df2xy6co4jgq4<>res://Labyrinth Generator.gd<>uid://spejewrln48u
-::res://Debug/::1678991269
-::res://Debug/Tilemap/::1678991303
-Colors.png::CompressedTexture2D::5169640032740541455::1676721770::1678991302::1::::<><>::
-TileMap.tscn::PackedScene::1294624036778434722::1678991269::0::1::::<><>::res://Debug/Tilemap/tileset.tres
-tileset.tres::TileSet::-1::1678991302::0::1::::<><>::uid://cfwhhl0phiaux
+::res://::1681361948
+icon.png::CompressedTexture2D::3860198610168468082::1679163651::1679163651::1::::<><>::
+::res://Maze-Generator/::1680421385
+Labyrinth Generator.gd::GDScript::-1::1680421385::0::1::::<>Node<>::
+Labyrinth Generator.tscn::PackedScene::7567385450505099437::1679246788::0::1::::<><>::res://Labyrinth Generator.gd
+::res://menus/::1680805367
+game_menu.gd::GDScript::-1::1680449863::0::1::::<>Control<>::
+game_menu.tscn::PackedScene::5931167631751376016::1680805367::0::1::::<><>::res://menus/game_menu.gd
+::res://menus/start menu/::1680805367
+start_menu.gd::GDScript::-1::1680805248::0::1::::<>Control<>::
+start_menu.tscn::PackedScene::1867444425209904727::1680805367::0::1::::<><>::res://menus/start menu/start_menu.gd
+::res://menus/start menu/Type/::1680805367
+Type.gd::GDScript::-1::1680805350::0::1::::<>Control<>::
+Type.tscn::PackedScene::4671574765933916018::1680805367::0::1::::<><>::res://menus/start menu/Type/Type.gd
+::res://menus/start menu/Type/Custom/::1680807138
+Custom.gd::GDScript::-1::1680807138::0::1::::<>Control<>::
+Custom.tscn::PackedScene::8556142285336438362::1680807138::0::1::::<><>::res://menus/start menu/Type/Custom/Custom.gd
+::res://Score saver/::1680453556
+Score.tres::Resource::-1::1680805376::0::1::::<><>::
+score_saver.gd::GDScript::-1::1680449762::0::1::::<>Node<>::
+::res://textures/::1680451169
+Block-material.tres::StandardMaterial3D::1602924747428143509::1680416512::0::1::::<><>::uid://3jr1t2cnlt3<>uid://cinwbd0l75ap0<>uid://b4kdl2sgv7pcp<>uid://8uehak4a5fnw
+mark.tres::StandardMaterial3D::7524526291761141698::1680451163::0::1::::<><>::uid://i523xj12m4ud<>uid://bhuntxvoiiugb<>uid://p1f4ahc8afaa<>uid://dxog464pwd7ox
+::res://textures/Asphalt026C_4K-JPG/::1680416359
+Asphalt026C_4K_AmbientOcclusion.jpg::CompressedTexture2D::5362526783661898279::1679233951::1680416356::1::::<><>::
+Asphalt026C_4K_Color.jpg::CompressedTexture2D::58380784733296246::1679233951::1680416356::1::::<><>::
+Asphalt026C_4K_Displacement.jpg::CompressedTexture2D::3298800192495746536::1679233951::1680416357::1::::<><>::
+Asphalt026C_4K_NormalDX.jpg::CompressedTexture2D::1559354520401318132::1679233951::1680416359::1::::<><>::
+Asphalt026C_4K_NormalGL.jpg::CompressedTexture2D::4442744167686775327::1679233951::1680416356::1::::<><>::
+Asphalt026C_4K_Roughness.jpg::CompressedTexture2D::2357774780431521140::1679233951::1680416355::1::::<><>::
+Asphalt026C_PREVIEW.jpg::CompressedTexture2D::5927424313880448514::1679233951::1680416354::1::::<><>::
+::res://textures/Ground048_4K-JPG/::1680416358
+Ground048_4K_AmbientOcclusion.jpg::CompressedTexture2D::2919854636355750749::1679233111::1680416355::1::::<><>::
+Ground048_4K_Color.jpg::CompressedTexture2D::625132665918284975::1679233112::1680416355::1::::<><>::
+Ground048_4K_Displacement.jpg::CompressedTexture2D::7514642890220646962::1679233112::1680416356::1::::<><>::
+Ground048_4K_NormalDX.jpg::CompressedTexture2D::6649280473053470879::1679233112::1680416358::1::::<><>::
+Ground048_4K_NormalGL.jpg::CompressedTexture2D::1106861860111720868::1679233112::1680416355::1::::<><>::
+Ground048_4K_Roughness.jpg::CompressedTexture2D::8802924507024994315::1679233113::1680416354::1::::<><>::
+Ground048_PREVIEW.jpg::CompressedTexture2D::2500631503323931359::1679233113::1680416354::1::::<><>::
+::res://textures/Metal035_4K-JPG/::1680426175
+Metal035_4K_Color.jpg::CompressedTexture2D::7124329408539285328::1679248138::1680416355::1::::<><>::
+Metal035_4K_Displacement.jpg::CompressedTexture2D::5829170642923204409::1679248138::1680416356::1::::<><>::
+Metal035_4K_Metalness.jpg::CompressedTexture2D::8078324381409471835::1679248138::1680416354::1::::<><>::
+Metal035_4K_NormalDX.jpg::CompressedTexture2D::1237165356122427514::1679248138::1680416355::1::::<><>::
+Metal035_4K_NormalGL.jpg::CompressedTexture2D::3491329131196663191::1679248138::1680416355::1::::<><>::
+Metal035_4K_Roughness.jpg::CompressedTexture2D::4729017428108052050::1679248138::1680416354::1::::<><>::
+Metal035_PREVIEW.jpg::CompressedTexture2D::9222612117628495745::1679248138::1680416354::1::::<><>::
+::res://textures/Tiles074_8K-JPG/::1680417076
+Tiles074_8K_Color.jpg::CompressedTexture2D::1278956826962617860::1680416566::1680416961::1::::<><>::
+Tiles074_8K_Displacement.jpg::CompressedTexture2D::2995560205232743737::1680416566::1680416586::1::::<><>::
+Tiles074_8K_NormalDX.jpg::CompressedTexture2D::7018234272137158657::1680416566::1680416589::1::::<><>::
+Tiles074_8K_NormalGL.jpg::CompressedTexture2D::6367522551758236399::1680416567::1680417076::1::::<><>::
+Tiles074_8K_Roughness.jpg::CompressedTexture2D::1329549541653724459::1680416567::1680417025::1::::<><>::
+Tiles074_PREVIEW.jpg::CompressedTexture2D::5528293511337389194::1680416567::1680416578::1::::<><>::
+::res://world/::1680805367
+node_3d.tscn::PackedScene::1039735560528208656::1680805367::0::1::::<><>::res://world/generator/plasera_block.gd<>res://world/Score Label.gd<>uid://i523xj12m4ud<>uid://bhuntxvoiiugb<>uid://p1f4ahc8afaa<>uid://df2xy6co4jgq4<>uid://dxog464pwd7ox<>res://Maze-Generator/Labyrinth Generator.gd<>uid://c2e4cqhlereg3
+Score Label.gd::GDScript::-1::1680443101::0::1::::<>Label<>::
+::res://world/generator/::1680805367
+Block.tscn::PackedScene::2425496175202280719::1680805367::0::1::::<><>::uid://w3p63qi5yo3f
+Labyrinth Generator.tscn::PackedScene::4648589703974247543::1680805367::0::1::::<><>::res://Maze-Generator/Labyrinth Generator.gd
+plasera_block.gd::GDScript::-1::1680451357::0::1::::<>Node3D<>::
+::res://world/generator/mål/::1680805367
+Area3D.gd::GDScript::-1::1680451469::0::1::::<>Area3D<>::
+Boll.tscn::PackedScene::6618835242873276234::1680805367::0::1::::<><>::uid://c8rcwue1aan73<>uid://dndg27t3ieh4f<>uid://bp0hxe5jtokbn<>uid://b8m1hxnsdn4yw<>res://world/generator/mål/Area3D.gd
+::res://world/generator/start/::1680805367
+start.gd::GDScript::-1::1680425215::0::1::::<>Area3D<>::
+Start.tscn::PackedScene::468554627606443396::1680805367::0::1::::<><>::res://world/generator/start/start.gd<>uid://shsh5j0yt7lw<>uid://cwyqfwbhfv60j<>uid://s7bqsvkvjpgl
+::res://world/player/::1680805367
+peng.tscn::PackedScene::9217786433368438822::1680805367::0::1::::<><>::
+Player.gd::GDScript::-1::1680451416::0::1::::<>CharacterBody3D<>::
+Player.tscn::PackedScene::6677962872700394080::1680805367::0::1::::<><>::res://world/player/Player.gd

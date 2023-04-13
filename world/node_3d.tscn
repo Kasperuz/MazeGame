@@ -1,0 +1,145 @@
+[gd_scene load_steps=17 format=3 uid="uid://o2wj7phjucyi"]
+
+[ext_resource type="Script" path="res://world/generator/plasera_block.gd" id="1_numf6"]
+[ext_resource type="Script" path="res://world/Score Label.gd" id="2_ggydu"]
+[ext_resource type="Texture2D" uid="uid://i523xj12m4ud" path="res://textures/Ground048_4K-JPG/Ground048_4K_Color.jpg" id="3_3teh3"]
+[ext_resource type="Script" path="res://world/pause.gd" id="3_q5b3p"]
+[ext_resource type="Texture2D" uid="uid://bhuntxvoiiugb" path="res://textures/Ground048_4K-JPG/Ground048_4K_AmbientOcclusion.jpg" id="4_4pv5n"]
+[ext_resource type="Texture2D" uid="uid://p1f4ahc8afaa" path="res://textures/Ground048_4K-JPG/Ground048_4K_NormalGL.jpg" id="5_kmv1n"]
+[ext_resource type="PackedScene" uid="uid://df2xy6co4jgq4" path="res://Maze-Generator/Labyrinth Generator.tscn" id="5_wdlgy"]
+[ext_resource type="Texture2D" uid="uid://dxog464pwd7ox" path="res://textures/Ground048_4K-JPG/Ground048_4K_Roughness.jpg" id="6_7whkj"]
+[ext_resource type="Script" path="res://Maze-Generator/Labyrinth Generator.gd" id="6_tqrsm"]
+[ext_resource type="PackedScene" uid="uid://c2e4cqhlereg3" path="res://world/player/Player.tscn" id="9_hiw4c"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mdn5x"]
+sky_top_color = Color(0.219608, 0.266667, 0.329412, 1)
+sky_horizon_color = Color(0.254902, 0.262745, 0.27451, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_7kejg"]
+sky_material = SubResource("ProceduralSkyMaterial_mdn5x")
+
+[sub_resource type="Environment" id="Environment_q03f3"]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_7kejg")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pusk"]
+albedo_texture = ExtResource("3_3teh3")
+metallic_specular = 0.0
+roughness_texture = ExtResource("6_7whkj")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("5_kmv1n")
+ao_enabled = true
+ao_texture = ExtResource("4_4pv5n")
+ao_texture_channel = 4
+subsurf_scatter_enabled = true
+uv1_triplanar = true
+uv2_triplanar = true
+billboard_keep_scale = true
+grow_amount = -6.57
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cvp5k"]
+material = SubResource("StandardMaterial3D_0pusk")
+size = Vector2(200, 200)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_p2bbn"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_numf6")
+
+[node name="Timer Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 146.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 105
+text = "00 : 00 : 00"
+horizontal_alignment = 1
+script = ExtResource("2_ggydu")
+
+[node name="pause" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_q5b3p")
+
+[node name="ColorRect" type="ColorRect" parent="pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.803922)
+
+[node name="Main menu" type="Button" parent="pause"]
+layout_mode = 0
+anchor_left = 0.395833
+anchor_top = 0.587963
+anchor_right = 0.624132
+anchor_bottom = 0.700617
+offset_bottom = -3.05176e-05
+theme_override_font_sizes/font_size = 47
+text = "Main Menu"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Back to game" type="Button" parent="pause"]
+layout_mode = 0
+anchor_left = 0.371528
+anchor_top = 0.399691
+anchor_right = 0.642361
+anchor_bottom = 0.512346
+theme_override_font_sizes/font_size = 47
+text = "Back to game"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q03f3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.02, 0, 0, 0)
+mesh = SubResource("PlaneMesh_cvp5k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_p2bbn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 38.0743, 0)
+rotation_edit_mode = 2
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+
+[node name="Labyrinth Generator" parent="." instance=ExtResource("5_wdlgy")]
+script = ExtResource("6_tqrsm")
+Size = Vector2i(30, 30)
+TurnChance = 0.3
+
+[node name="Player" parent="." instance=ExtResource("9_hiw4c")]
+
+[node name="Camera3D" parent="Player/Node3D" index="0"]
+current = true
+
+[connection signal="pressed" from="pause/Main menu" to="pause" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="pause/Back to game" to="pause" method="_on_back_to_game_pressed"]
+
+[editable path="Player"]

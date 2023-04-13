@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4lfui1gs6gyg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yeik7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p70e5"]
+height = 0.03
+radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvph2"]
+albedo_color = Color(0.721569, 0.4, 0.0352941, 1)
+metallic = 0.64
+roughness = 0.45
+emission_energy_multiplier = 16.0
+normal_scale = -11.82
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uxbdy"]
+material = SubResource("StandardMaterial3D_xvph2")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.03
+
+[node name="Peng" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_yeik7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_p70e5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_uxbdy")

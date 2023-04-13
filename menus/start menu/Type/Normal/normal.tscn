@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgqm2qp4pqvic"]
+
+[ext_resource type="Script" path="res://menus/start menu/Type/Normal/normal.gd" id="1_f3fkm"]
+
+[node name="Normal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f3fkm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.00154321
+anchor_right = 0.210937
+anchor_bottom = 0.195046
+offset_bottom = -1.39003
+grow_horizontal = 2
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 42
+text = "Back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Easy" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0347222
+anchor_top = 0.501543
+anchor_right = 0.153646
+anchor_bottom = 0.64355
+offset_bottom = -1.02011
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 60
+text = "Easy"
+flat = true
+
+[node name="Normal" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21875
+anchor_top = 0.501543
+anchor_right = 0.415799
+anchor_bottom = 0.64355
+offset_bottom = -1.02011
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 60
+text = "Normal"
+flat = true
+
+[node name="Hard" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.480903
+anchor_top = 0.501543
+anchor_right = 0.611979
+anchor_bottom = 0.64355
+offset_bottom = -1.02011
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 60
+text = "Hard"
+flat = true
+
+[node name="Impossible" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68316
+anchor_top = 0.501543
+anchor_right = 0.961806
+anchor_bottom = 0.64355
+offset_bottom = -1.02011
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 60
+text = "Impossible"
+flat = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="Impossible" to="." method="_on_impossible_pressed"]

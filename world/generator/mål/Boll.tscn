@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1khiqlpg1g0q"]
+
+[ext_resource type="Texture2D" uid="uid://c8rcwue1aan73" path="res://textures/Metal035_4K-JPG/Metal035_4K_Color.jpg" id="1_cnuav"]
+[ext_resource type="Texture2D" uid="uid://dndg27t3ieh4f" path="res://textures/Metal035_4K-JPG/Metal035_4K_Metalness.jpg" id="2_hodx8"]
+[ext_resource type="Texture2D" uid="uid://bp0hxe5jtokbn" path="res://textures/Metal035_4K-JPG/Metal035_4K_NormalGL.jpg" id="3_cetgu"]
+[ext_resource type="Texture2D" uid="uid://b8m1hxnsdn4yw" path="res://textures/Metal035_4K-JPG/Metal035_4K_Roughness.jpg" id="4_ijc7u"]
+[ext_resource type="Script" path="res://world/generator/mål/Area3D.gd" id="5_05ebu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2r40"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.803922)
+albedo_texture = ExtResource("1_cnuav")
+metallic = 1.0
+metallic_texture = ExtResource("2_hodx8")
+roughness_texture = ExtResource("4_ijc7u")
+roughness_texture_channel = 4
+emission = Color(0.443137, 0.32549, 0.0784314, 1)
+emission_energy_multiplier = 6.32
+normal_enabled = true
+normal_texture = ExtResource("3_cetgu")
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0wnhk"]
+material = SubResource("StandardMaterial3D_x2r40")
+height = 6.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a0a04"]
+points = PackedVector3Array(0.499832, 3.04702, 0.309468, -0.547507, -3.04702, -0.261849, -0.547507, -3.04702, 0.214174, 0.595126, -3.04702, -0.0713727, -0.261849, 3.04702, -0.547507, -0.452213, 3.04702, 0.40465, 0.0238095, -3.04702, 0.595126, 0.40465, -3.04702, -0.452213, 0.499832, 3.04702, -0.357031, -0.547507, 3.04702, -0.261849, 0.0238095, 3.04702, 0.595126, -0.261849, -3.04702, -0.547507, 0.309468, -3.04702, 0.499832, 0.214174, 3.04702, -0.547507, -0.357031, -3.04702, 0.499832, 0.595126, 3.04702, -0.0713727, 0.499832, -3.04702, 0.309468, -0.547507, 3.04702, 0.214174, 0.214174, -3.04702, -0.547507, 0.309468, 3.04702, 0.499832, -0.0713727, 3.04702, 0.595126, 0.595126, -3.04702, 0.0238095, 0.499832, -3.04702, -0.357031, -0.357031, 3.04702, 0.499832, -0.0713727, -3.04702, 0.595126, 0.595126, 3.04702, 0.0238095, 0.40465, 3.04702, -0.452213, -0.452213, -3.04702, 0.40465)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mr2lo"]
+size = Vector3(15, 1, 17)
+
+[node name="Boll" type="Area3D"]
+collision_mask = 6
+gravity_space_override = 3
+gravity_point_center = Vector3(0, 1, 0)
+gravity_direction = Vector3(0, 1, 0)
+gravity = 30.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_0wnhk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_a0a04")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("5_05ebu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_mr2lo")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

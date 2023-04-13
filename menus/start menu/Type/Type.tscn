@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7s7fh4xdvubi"]
+
+[ext_resource type="Script" path="res://menus/start menu/Type/Type.gd" id="1_owtpp"]
+
+[node name="Type" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owtpp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Normal" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.395062
+anchor_right = 0.44184
+anchor_bottom = 0.58642
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 80
+text = "Normal"
+flat = true
+
+[node name="Custom" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.555556
+anchor_top = 0.395062
+anchor_right = 0.830729
+anchor_bottom = 0.58642
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 80
+text = "Custom"
+flat = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.00154321
+anchor_right = 0.210937
+anchor_bottom = 0.192901
+scale = Vector2(1, 1.01121)
+theme_override_font_sizes/font_size = 42
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Custom" to="." method="_on_custom_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

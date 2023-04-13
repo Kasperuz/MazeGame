@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://besep7vy711va"]
+
+[sub_resource type="GDScript" id="GDScript_ibnjq"]
+script/source = "extends Resource
+
+@export var highScore := [0.0,0.0,0.0,0.0]
+@export var score: float
+@export var path: String
+"
+
+[resource]
+script = SubResource("GDScript_ibnjq")
+highScore = [6.50067, 0.0, 0.0, 0.0]
+score = 6.50067
+path = "res://Score saver/Score.tres"
